@@ -7,6 +7,13 @@ import streamlit.components.v1 as stc
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
+from PIL import Image
+
+img = Image.open("app_logo.png")
+st.set_page_config(page_title="LibGeniee", page_icon=img)
+
+hide_menu_style = """ <stytle> #MainMenu {visibility:hidden; } footer {visibility:hidden;}</style>"""
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 # Load EDA
 
