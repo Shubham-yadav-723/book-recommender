@@ -40,7 +40,7 @@ def corpus_recommendations(title):
                                  ).str.join(' '))
 
     tf_corpus = TfidfVectorizer(analyzer='word', ngram_range=(
-        1, 2), min_df=0, stop_words='english')
+        1, 2), min_df=1, stop_words='english')
     tfidf_matrix_corpus = tf_corpus.fit_transform(books['corpus'])
     cosine_sim_corpus = linear_kernel(tfidf_matrix_corpus, tfidf_matrix_corpus)
 
